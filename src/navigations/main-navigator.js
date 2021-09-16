@@ -7,7 +7,11 @@ import Discover from '@/containers/Discover';
 import Nearby from '@/containers/Nearby';
 import Appointment from '@/containers/Appointment';
 import Messages from '@/containers/Messages';
+import Menu from '@/containers/Menu';
 import Profiles from '@/containers/Profiles/List';
+import WaitingList from '@/containers/WaitingList';
+import MyPackages from '@/containers/MyPackages';
+import Notifications from '@/containers/Notifications';
 
 const TabNavigatorConfig = {
   initialRouteName: 'Nearby',
@@ -91,17 +95,41 @@ const RouteConfigs = {
       tabBarLabel: props => <TabBarLabel label="Messages" {...props} />,
     },
   },
-  Profiles: {
-    screen: Profiles,
+  Menu: {
+    screen: Menu,
     navigationOptions: {
       tabBarIcon: props => (
         <TabBarIcon
-          normal={require('@/assets/images/navigation/profile.png')}
-          active={require('@/assets/images/navigation/profile_active.png')}
+          normal={require('@/assets/images/navigation/more.png')}
+          active={require('@/assets/images/navigation/more_active.png')}
           {...props}
         />
       ),
-      tabBarLabel: props => <TabBarLabel label="Profiles" {...props} />,
+      tabBarLabel: props => <TabBarLabel label="" {...props} />,
+    },
+  },
+  Profiles: {
+    screen: Profiles,
+    navigationOptions: {
+      tabBarButtonComponent: () => null,
+    },
+  },
+  WaitingList: {
+    screen: WaitingList,
+    navigationOptions: {
+      tabBarButtonComponent: () => null,
+    },
+  },
+  Notifications: {
+    screen: Notifications,
+    navigationOptions: {
+      tabBarButtonComponent: () => null,
+    },
+  },
+  MyPackages: {
+    screen: MyPackages,
+    navigationOptions: {
+      tabBarButtonComponent: () => null,
     },
   },
 };
